@@ -1,0 +1,21 @@
+position: fixed;
+-Eğer aşağı doğru kaydırırken <div> imizin sabit kalmasını istiyorsak
+position: fixed; (top: 0 - right/left/bottom: 0... şeklinde ayarlanabilir)
+*fixed= browser penceresinin içinde olur
+
+position: absoulte; (absolute sayfanın içinde olur)
+-Aşağı kaydırdığımızda content ile birlikte kaybolur
+
+*position;absolute'u position: fixed içine koyarsak "position: fixed"
+yaptığımız contentin içinde kalır ve sadece sınırlarını bu contente göre
+belirler.
+
+position: relative;
+-position:absolute; "position: relative'in" içinde olursa contentin içinde
+bir yere sabitlenmiş olur. Yani sadece o contentin içinde hareket eder,
+sayfanın içinde değil.
+
+flex-direction: row = yatay olarak hizalar(horizontal)
+flex-direction: column = dikey olarak hizalar(vertical)
+align-items: horizontal direction
+

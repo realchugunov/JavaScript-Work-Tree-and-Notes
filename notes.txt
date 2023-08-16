@@ -1,0 +1,350 @@
+HTML & CSS Notes
+
+<!-- index.html -->
+
+<div class="main">
+  <div class="list subsection"></div>
+</div>
+
+/* rule 1 */
+.subsection {
+  color: blue;
+}
+
+/* rule 2 */
+.main .list {
+  color: red;
+}
+*In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors, so the color: red; 
+declaration would take precedence.*
+*ID beats class.*
+
+<!-- index.html -->
+
+<div class="main">
+  <div class="list">
+    <div id="subsection"></div>
+  </div>
+</div>
+
+/* rule 1 */
+.list #subsection {
+  background-color: yellow;
+  color: blue;
+}
+
+/* rule 2 */
+.main .list #subsection {
+  color: red;
+}
+
+*Both rules only have one ID selector, but rule 2 has more class selectors, so rule 2 has a higher specificity!**
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BOX MODELS
+
+Outer display type:If a box has an outer display type of block, then:
+
+The box will break onto a new line.
+The width and height properties are respected.
+Padding, margin and border will cause other elements to be pushed away from the box.
+If width is not specified, the box will extend in the inline direction to fill the space available in its container. 
+In most cases, *the box will become as wide as its container, filling up 100% of the space available.*
+Some HTML elements, such as <h1> and <p>, use block as their outer display type by default.
+
+If a box has an outer display type of inline, then:
+
+The box will not break onto a new line.
+The width and height properties will not apply.
+Vertical padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
+Horizontal padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
+Some HTML elements, such as <a>, <span>, <em> and <strong> use inline as their outer display type by default.
+
+Inner display type
+Boxes also have an inner display type, which dictates how elements inside that box are laid out.
+
+Block and inline layout is the default way things behave on the web. By default and without any other instruction, 
+the elements inside a box are also laid out in normal flow and behave as block or inline boxes.
+
+You can change the inner display type for example by setting display: flex;. The element will still use the outer display type block 
+but this changes the inner display type to flex. Any direct children of this box will become flex items and behave according to the Flexbox specification.
+*flex=Esnek
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Using display: inline-block
+display: inline-block is a special value of display, which provides a middle ground between inline and block.
+Use it if you do not want an item to break onto a new line, but do want it to respect width and height and avoid the overlapping seen above.
+
+An element with display: inline-block does a subset of the block things we already know about:
+
+The width and height properties are respected.
+padding, margin, and border will cause other elements to be pushed away from the box.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Let’s Flex!
+Flexbox is a way to arrange items into rows or columns. These items will flex (i.e. grow or shrink) based on some simple rules that you can define.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Javascript Notes
+
+String = A piece of text
+var num = Number
+var Difference = Aradaki "fark"ı temsil ediyor. Çıkarma işlemi
+var Product = Çarpma işlemi
+var quotient = Bölme
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+To declare a constant or variable is to give it an *identifier* so that you can reference it. To assign a value to a variable is to store information in it.
+
+---------TO DECLARE---------
+In JavaScript, you can create constants and variables—basically, objects that hold information—and give them values that you can use later in your code
+
+---------DECLARE A CONSTANT---------
+The const statement is for constants:
+
+// DECLARE A CONSTANT
+const firstName;
+
+Constants cannot be redeclared or reassigned.
+
+---------DECLARE A VARIABLE WITH LET---------
+
+// Declare a variable with the "let" statement
+let firstName;
+
+Variables declared with the let statement cannot be redeclared but can be reassigned.
+
+---------DECLARE A VARIABLE WITH VAR---------
+And the var statement is for variable with a function scope or global scope:
+// Declare a variable with the "var" statement
+var firstName;
+Variables declared with the var statement can be redeclared and reassigned.
+
+---------TO ASSIGN---------
+Once you’ve declared a constant or variable, you can assign it a value with the assignment operator (=).
+The first time you assign a value to a constant or variable is called “assignment” or “initialization.”
+You can initialize a constant or variable at declaration:
+
+// Declare "firstName" constant and assign it a value of "Jim"
+const firstName = "Jim";
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Increment = Artış demek örn: var myVar = 87;
+myVar = myVar + 1 veya myVar++
+
+Decrement a number = Azalma  > var myVar = 11;
+myVar = myVar - 1; or myVar--
+
+Decimal Numbers = Ondalık
+Remainder = Kalan sayı (bölme işlemindeki)
+*remainder operator is "%" for instance var remainder;
+
+remainder = 11 % 3;
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*Arrays* allow you to store several pieces of data in one place.
+*Arrays* always start with a bracket ([) and then end with (])
+*Nested Array* = When one of the elements in an array is another array, that's called a nested array or a multidimensional array. For example;
+var ourArray = [['the universe', 42], ["everything", 101010]];
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+pop() function = We can remove an item from any array with the pop() function. Here is an example;
+var ourArray = [1,2,3];
+var removedFromOurArray = ourArray.pop();
+*removedFromOurArray now equals 3, and ourArray now equals [1,2] its deleting the last element*
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*shift()* function is similar to pop() function except it removes the first element of the array instead the final element.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The "unshift()" function is similar to the push() array function.While push() adds an element to the end of the array,  unshift() adds at element to the beggining of the array.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"Function"s allow us to create reusable code in Javascript. For Example;
+function ourReusableFunction() {
+console.log("Heyya, World");
+}  
+ourReusableeFunction();
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+( {} these are brackets.) and everything inside the curly bracket is run anytime the function is called or invoked. 
+while loop: while loop first checks the condition before it runs any code within the loop.
+do while: do while loop will always run at least one time and then it will check the condition.
+let: let does not let you declare a variable twice.
+const: Const is another way to declare a variable. It has all the featurees of let but it is also read only. You cannot reassign a const.If you know for sure that you never want to reassign a variable, always use "const" so you dont accidentally reassign it when you dont mean to.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OPERATORS
+Operators are used to assign values, compare values, perform arithmetic operations.
+Basically, stuff you see in math class.. (+,-,=,*/etc.)
+
+*always give descriptive names to your variables.*
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+THE prompt()
+The prompt() is a built-in JavaScript functionality that helps you get inputs from a user through the browser.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Arrow functions =>
+arrow function with explicit return
+
+const sumArrow = (a, b) => {
+  return a + b
+}
+
+arrow function with implicit return
+Important: fo implicit return, remove curly braces.
+
+const sumArrow = (a, b) => (a + b)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+slice
+    example:
+    console.log(groceries.slice(0, 2)) means = start from 0 INCLUSIVE and up to 2 (2 hariç, 2 ye kadar olan array içindeki itemleri seçiyor.)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+indexOf
+    array içindeki spesifik itemin kaçıncı sırada olduğunu gösterir.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+length
+    Length is an array property that returns the number of elements you have in a given array.
+    (1 den başlar ve array içinde kaç adet item olduğunu söyler.(kaç adet meyve var, mesela.))
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+objects
+    Objects are a type of variable, quite similar to arrays but they have something called key-value pairs.
+    for instance:
+    const myObject = {
+      key1 : 'value1',
+      key2 : 'value2'
+    }
+    console.log(myObject.key1) this is dot notation.
+    console.log(myObject['key1']) this is bracket notation.
+    person.phone = 1-222-333-4444 this is assigning object (console.log(person.phone))
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+For loops
+  array içindeki tüm itemleri printler/okur.
+  for instance;
+  const fruits = [Apple, Orange, Banana, Strawberry, Mango, Cherry, Apple, Orange, Banana, Strawberry, Mango, Cherry]
+
+  for (let i=0; i< fruits.length; i++) {
+    console.log(fruits[i])
+  }
+
+  i = index
+  what is index mean? 
+  Indexing the number of runs.
+
+  i< fruit.length means = condition for the loop run. We want you to run 20 times because we have 20 fruits! also 0 less then 20? true. that is why i< fruit length
+  i++ means increments the index. Every single time you done running just increment i by one.
+
+   but this technic is not using by people anymore. Here is the easiest method for looping;
+
+   for (const fruit of fruits) {
+    console.log(fruit)
+   }
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.map = loops and returns an array.
+    iki katına çıkarır. 
+    For Instance;
+
+    const doubleMap = (numbers) => {
+      return numbers.map(number => number * 2)
+    } 
+
+    Another Instance;
+
+    const actors = [
+      {name: 'Johnny', netWorth: 2000000},
+      {name: 'Amber', netWorth: 10},
+      {name: 'Leonardo', netWorth: 10000000}
+    ]
+    let result = actors.filter(actor => actor.netWorth > 10)
+    console.log(result)
+    let names = result.map(actor => actor.name).join( ', ' )  (buradaki actor => anlamı each actor yani her actor)
+
+    geliri 10 dan büyük 2 tane aktör seçiyor olacak sonuç olarak.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+filter() = it loops and returns an array with matching conditions.
+  for instance;
+
+  const filter = (numbers, greaterThan) => {
+    let result = []
+    for (const number of numbers) {
+      if (number > greaterThan) {
+        result.push(number)
+      }
+    }
+    return result
+  }
+  console.log(filter([1, 2, 3 , 4, 5, 6], 3)) and result is = (3) [4, 5, 6]
+
+  şimdi .filter() kullanalım;
+
+  const nums = [1, 2, 3, 4, 5, 6]
+  console.log(nums.filter(num => num > 3)) and result is [4, 5, 6]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.reduce()
+    reduce takes in a function as an argument
+    reduce loops and gives you back the accumulator (What is an accumulator? An accumulator is a type of register for short-term)
+
+    const nums = [1, 2, 3, 4, 10]
+    const result = nums.reduce((prev, curr) => prev + curr)
+    console.log(result)  sonuç: 20 dir, bize toplamını verir.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+APIs
+
+APIs stands for "Application Programming Interface" and it lets your app communicate with other services to fetch data.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.map()
+
+means = return an array.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+setTimeOut()
+
+setTimeOut un yaptığı şey belirtilen şeyi 2 saniyede okuyacak olması. 2 saniye sonra "soup" kelimesini görüntületebiliyor.
+2000 milisecond = 2 second
+
+const waitingForSoup = () => console.log('soup')
+setTimeOut(waitingForSoup, 2000)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ternary Operators
+"Promises", For Instance;
+
+const promise1 = new Promise((resolve, reject) => {
+  setTimeOut(() => {
+    isReady = true
+    isReady ? resolve('soup is ready'): reject('no soup today')
+  }, 2000)
+})
+
+console.log(promise1.then) = .then çünkü "if the promise resolves then you can call .then and get its values. So we can say (value => console.log(value))
+console.log(promise.then(value => console.log(value))) this means give me the value when .then is success.
+.catch() = this is when an error happens. yani;
+
+console.log(promise1
+  .then(success => console.log(success))) this is gonna show in console as a = 'soup is ready' if we declined isReady as a true statement.
+  .catch(error => console.log(error)) in console its gonna show ('no soup today') if we declined isReady as a false statement.
+
+ya da yukarıdaki yerine şu yöntemi kullanabiliriz;
+const getSoup = async () => {
+  const soup = await promise1
+  console.log(soup)
+}
+getSoup()
+
+isReady ? = bu bir condition
+resolve('soup is ready') = runs if true (bu aynı zamanda ternary operators)
+reject ('no soup today') = runs if false (bu aynı zamanda ternary operators)
+
+isReady yi true ve false olarak karışık yapacak olursak;
+isReady = [true, false][0] = index'i yani [] kutucuğunu [0] yaparsak "false" - [1] yaparsak "true" statement alırız.
+Random yapmak için = isReady = [true, false][Math.floor(Math.random() *2)]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+await keyword
+await is the same thing like .then. It is a lot easier to use.
+
+rules for using async / await
+1. you must create a function 
+2. you must use keyword async
+3. use the word await
+for Instance;
+
+const getDog = async () => {
+  const url = 'https://dog.ceo/api/breeds/image/random'
+  const response = await fetch(url)
+  const data = await response.json()
+  console.log(data)
+}
+
+getDog()
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
